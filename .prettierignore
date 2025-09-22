@@ -1,11 +1,28 @@
-*.md
-public/,/*
-public/!/*
-public/@/*
-public/$/*
-package-lock.json
-node_modules/**
+# Dependency directories
+node_modules/
 pnpm-lock.yaml
+package-lock.json
+
+# Build output
+dist/
+build/
+
+# Static assets (images, icons, etc.)
+public/assets/
+public/**/*.png
+public/**/*.jpg
+public/**/*.webp
+public/**/*.ico
+public/**/*.svg
+
+# Ignore config, lock, and metadata files
 .gitignore
 .gitattributes
 LICENSE
+
+# Documentation
+*.md
+
+# Ignore service worker and config in public/@
+public/@/sw.js
+public/@/uv.config.js
