@@ -1,4 +1,5 @@
 import express from 'express';
+import compression from 'compression';
 import cors from 'cors';
 import helmet from 'helmet';
 import http from 'node:http';
@@ -17,21 +18,44 @@ const app = express();
 const __dirname = process.cwd();
 const PORT = process.env.PORT || 6060;
 
+
+// Enable compression for better speed
+app.use(compression());
+
+// CORS and security headers
 app.use(cors());
 app.use(helmet({
-	contentSecurityPolicy: false // Set to true and configure if you want CSP
+	contentSecurityPolicy: false, // Set to true and configure if you want CSP
+	crossOriginResourcePolicy: { policy: "cross-origin" },
+	referrerPolicy: { policy: "strict-origin-when-cross-origin" },
+	frameguard: { action: "deny" },
+	hsts: { maxAge: 31536000, includeSubDomains: true, preload: true },
 }));
 // Prevent X-Powered-By header
 app.disable('x-powered-by');
+
+// Parse requests
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use('/epoxy/', express.static(epoxyPath));
-app.use('/@/', express.static(uvPath));
-app.use('/libcurl/', express.static(libcurlPath));
-app.use('/baremux/', express.static(baremuxPath));
 
+// Static file serving with cache-control for better performance
+const staticOptions = { maxAge: '7d', setHeaders: (res) => {
+	res.setHeader('Cache-Control', 'public, max-age=604800, immutable');
+}};
+app.use(express.static(path.join(__dirname, 'public'), staticOptions));
+app.use('/epoxy/', express.static(epoxyPath, staticOptions));
+app.use('/@/', express.static(uvPath, staticOptions));
+app.use('/libcurl/', express.static(libcurlPath, staticOptions));
+app.use('/baremux/', express.static(baremuxPath, staticOptions));
+
+// Main routes
 app.use('/', routes);
+
+// Error handler for better debugging and compatibility
+app.use((err, req, res, next) => {
+	console.error('Server error:', err);
+	res.status(500).json({ error: 'Internal Server Error' });
+});
 
 server.on('request', (req, res) => {
 	app(req, res);
