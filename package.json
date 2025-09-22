@@ -30,17 +30,18 @@
 		"@mercuryworkshop/wisp-js": "^0.3.3",
 		"@titaniumnetwork-dev/ultraviolet": "^3.2.10",
 		"chalk": "^5.6.2",
+		"compression": "^1.8.1",
 		"cors": "^2.8.5",
 		"express": "^4.21.2",
 		"express-rate-limit": "^7.5.1",
-		"lucide-static": "^0.424.0",
-		"helmet": "^7.0.0"
+		"helmet": "^7.0.0",
+		"lucide-static": "^0.424.0"
 	},
-			"devDependencies": {
-				"autoprefixer": "^10.4.21",
-				"html-minifier-terser": "^7.2.0",
-				"prettier": "^3.6.2",
-				"sass": "^1.93.0",
-				"terser": "^5.44.0"
-			}
-			}
+	"devDependencies": {
+		"autoprefixer": "^10.4.21",
+		"html-minifier-terser": "^7.2.0",
+		"prettier": "^3.6.2",
+		"sass": "^1.93.0",
+		"terser": "^5.44.0"
+	}
+}
