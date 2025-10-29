@@ -1,20 +1,16 @@
 {
   "name": "space",
   "version": "1.1.1",
+  "description": "Space Proxy - Web unblocker built with Express",
   "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "format": "prettier --write ."
   },
-  "keywords": [
-    "Space",
-    "Proxy",
-    "Unblocker"
-  ],
+  "keywords": ["Space", "Proxy", "Unblocker"],
   "author": "xnoctra <x.noctra@outlook.com>; crllect <crllect@proton.me>",
   "license": "ISC",
-  "description": "",
   "engines": {
     "node": ">=22.17.0",
     "pnpm": ">=10.17.1"
