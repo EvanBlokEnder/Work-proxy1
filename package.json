@@ -1,47 +1,44 @@
-{
-	"name": "space",
-	"version": "1.1.1",
-	"type": "module",
-	"main": "index.js",
-	"scripts": {
-		"start": "node index.js",
-		"format": "prettier --write ."
-	},
-	"keywords": [
-		"Space",
-		"Proxy",
-		"Unblocker",
-		"Space",
-		"Proxy",
-		"Space",
-		"Unblocker"
-	],
-	"author": "xnoctra <x.noctra@outlook.com>; crllect <crllect@proton.me>",
-	"license": "ISC",
-	"description": "",
-	"engines": {
-		"node": ">=22.17.0",
-		"pnpm": ">=10.17.1"
-	},
-	"dependencies": {
-		"@mercuryworkshop/bare-mux": "^2.1.7",
-		"@mercuryworkshop/epoxy-transport": "^2.1.28",
-		"@mercuryworkshop/libcurl-transport": "^1.5.0",
-		"@mercuryworkshop/wisp-js": "^0.3.3",
-		"@titaniumnetwork-dev/ultraviolet": "^3.2.10",
-		"chalk": "^5.6.2",
-		"compression": "^1.8.1",
-		"cors": "^2.8.5",
-		"express": "^4.21.2",
-		"express-rate-limit": "^7.5.1",
-		"helmet": "^7.0.0",
-		"lucide-static": "^0.424.0"
-	},
-	"devDependencies": {
-		"autoprefixer": "^10.4.21",
-		"html-minifier-terser": "^7.2.0",
-		"prettier": "^3.6.2",
-		"sass": "^1.93.0",
-		"terser": "^5.44.0"
-	}
+{{
+  "name": "space",
+  "version": "1.1.1",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "Space",
+    "Proxy",
+    "Unblocker"
+  ],
+  "author": "xnoctra <x.noctra@outlook.com>; crllect <crllect@proton.me>",
+  "license": "ISC",
+  "description": "",
+  "engines": {
+    "node": ">=22.17.0",
+    "pnpm": ">=10.17.1"
+  },
+  "packageManager": "pnpm@10.17.1",
+  "dependencies": {
+    "@mercuryworkshop/bare-mux": "^2.1.7",
+    "@mercuryworkshop/epoxy-transport": "^2.1.28",
+    "@mercuryworkshop/libcurl-transport": "^1.5.0",
+    "@mercuryworkshop/wisp-js": "^0.3.3",
+    "@titaniumnetwork-dev/ultraviolet": "^3.2.10",
+    "chalk": "^5.6.2",
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.1",
+    "helmet": "^7.0.0",
+    "lucide-static": "^0.424.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "html-minifier-terser": "^7.2.0",
+    "prettier": "^3.6.2",
+    "sass": "^1.93.0",
+    "terser": "^5.44.0"
+  }
 }
